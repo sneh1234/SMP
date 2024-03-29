@@ -17,7 +17,7 @@ class handler(BaseHTTPRequestHandler):
         for f in files:
             self.wfile.write(f.encode('utf-8') + '\n')
 
-        # self.wfile.write("<img src='./plots/my_plot.png'/>")
+        self.wfile.write("<img src='./plots/my_plot.png'/>")
         return
 
 
