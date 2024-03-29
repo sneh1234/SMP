@@ -14,7 +14,7 @@ class handler(BaseHTTPRequestHandler):
 
         self.end_headers()
         self.wfile.write('Hello, world3!'.encode('utf-8'))
-        self.wfile.write(os.listdir())
+        # self.wfile.write(os.listdir())
 
         # self.wfile.write("<img src='../plots/my_plot.png'/>")
         return
