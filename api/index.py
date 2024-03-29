@@ -2,6 +2,8 @@ from http.server import BaseHTTPRequestHandler
 
 import yfinance as yf
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 import os
 class handler(BaseHTTPRequestHandler):
