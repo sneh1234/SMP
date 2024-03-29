@@ -13,7 +13,7 @@ class handler(BaseHTTPRequestHandler):
         dl.get_stock_data('TATASTEEL')
 
         self.end_headers()
-        self.wfile.write('Hello, world2!'.encode('utf-8'))
+        self.wfile.write('Hello, world3!'.encode('utf-8'))
         self.wfile.write(os.getcwd().encode('utf-8'))
 
         self.wfile.write("<img src='../plots/my_plot.png'/>")
