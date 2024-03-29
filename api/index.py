@@ -15,7 +15,7 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         files = os.listdir()
         for f in files:
-            self.wfile.write(f)
+            self.wfile.write(f.encode('utf-8'))
 
         # self.wfile.write("<img src='../plots/my_plot.png'/>")
         return
