@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
 class dataloader():
     def __init__(self):
         pass
-    def get_stock_data(stock):
+    def get_stock_data(self, stock):
         if not os.path.exists('./plots/my_plot.png'):
                 
             ticker = yf.Ticker('{}.NS'.format(stock))
