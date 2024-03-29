@@ -31,7 +31,7 @@ class dataloader():
             ticker = yf.Ticker('{}.NS'.format(stock))
             aapl_df = ticker.history(period="5y")
             plt.plot(aapl_df)
-            fig.savefig('./plots/my_plot.png')
+            plt.savefig('./plots/my_plot.png')
             plt.close()
 
 
