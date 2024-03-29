@@ -16,12 +16,8 @@ class handler(BaseHTTPRequestHandler):
         aapl_df = dl.get_stock_data('TATASTEEL')
 
         self.end_headers()
-        files = os.listdir()
-        for f in files:
-            self.wfile.write(f.encode('utf-8') + '\n')
 
-
-        self.wfile.write(aapl_df.head())
+        self.wfile.write(str(aapl_df.head()))
 
         self.wfile.write("<img src='./plots/my_plot.png'/>")
         return
