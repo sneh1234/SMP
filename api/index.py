@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler
 
 import yfinance as yf
+import pandas as pd
 
 import os
 class handler(BaseHTTPRequestHandler):
@@ -16,6 +17,7 @@ class handler(BaseHTTPRequestHandler):
         files = os.listdir()
         for f in files:
             self.wfile.write(f.encode('utf-8') + '\n')
+        
 
         self.wfile.write("<img src='./plots/my_plot.png'/>")
         return
@@ -30,7 +32,7 @@ class dataloader():
                 
             ticker = yf.Ticker('{}.NS'.format(stock))
             aapl_df = ticker.history(period="5y")
-            plt.plot(aapl_df)
+            plt.plot(aapl_df['Close'])
             plt.savefig('./plots/my_plot.png')
             plt.close()
 
