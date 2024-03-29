@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler
 
 import yfinance as yf
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 
 import os
@@ -13,13 +13,15 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','text/plain')
 
         dl = dataloader()
-        dl.get_stock_data('TATASTEEL')
+        aapl_df = dl.get_stock_data('TATASTEEL')
 
         self.end_headers()
         files = os.listdir()
         for f in files:
             self.wfile.write(f.encode('utf-8') + '\n')
-        
+
+
+        self.wfile.write(aapl_df.head())
 
         self.wfile.write("<img src='./plots/my_plot.png'/>")
         return
@@ -34,9 +36,11 @@ class dataloader():
                 
             ticker = yf.Ticker('{}.NS'.format(stock))
             aapl_df = ticker.history(period="5y")
-            plt.plot(aapl_df['Close'])
-            plt.savefig('./plots/my_plot.png')
-            plt.close()
+            #plt.plot(aapl_df['Close'])
+            #plt.savefig('./plots/my_plot.png')
+            #plt.close()
+            return aapl_df
+        return 1
 
 
 
