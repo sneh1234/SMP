@@ -1,6 +1,6 @@
 from http.server import BaseHTTPRequestHandler
 
-import yfinance as yf
+# import yfinance as yf
 
 import os
 class handler(BaseHTTPRequestHandler):
