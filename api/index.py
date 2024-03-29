@@ -2,6 +2,7 @@ from http.server import BaseHTTPRequestHandler
 
 import yfinance as yf
 
+import os
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
@@ -21,13 +22,16 @@ class handler(BaseHTTPRequestHandler):
 
 class dataloader():
     def __init__():
-        passs
+        pass
     def get_stock_data(stock):
-        ticker = yf.Ticker('{}.NS'.format(stock))
-        aapl_df = ticker.history(period="5y")
-        fig, ax = plt.subplots()
-        s.plot.bar()
-        fig.savefig('../plots/my_plot.png')
+        if not os.path.exists('./plots/my_plot.png'):
+                
+            ticker = yf.Ticker('{}.NS'.format(stock))
+            aapl_df = ticker.history(period="5y")
+            plt.plot(aapl_df)
+            fig.savefig('../plots/my_plot.png')
+            plt.close()
+
 
 
 
