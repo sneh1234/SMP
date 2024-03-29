@@ -13,7 +13,9 @@ class handler(BaseHTTPRequestHandler):
         # dl.get_stock_data('TATASTEEL')
 
         self.end_headers()
-        self.wfile.write(os.listdir())
+        s = os.listdir()
+        s = str(s)
+        self.wfile.write(s)
         #self.wfile.write(os.listdir())
 
         # self.wfile.write("<img src='../plots/my_plot.png'/>")
