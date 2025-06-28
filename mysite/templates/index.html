@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/static/js/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .notification {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
+        <style type="text/css">
+.myOtherTable { background-color:#FFFFE0;border-collapse:collapse;color:#000;font-size:18px; }
+.myOtherTable th { background-color:#BDB76B;color:white;width:50%; }
+.myOtherTable td, .myOtherTable th { padding:5px;border:0; }
+.myOtherTable td { border-bottom:1px dotted #BDB76B; }
+</style>
+
+
+<style type ="text/css">
+.HighReco {background-color:#228B22}
+</style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Stock Recommendations</h1>
+        <table id="recommended-stocks" class='myOtherTable'>
+            <thead>
+                <tr>
+                    <th>Stock Name</th>
+                    <th>Expected Return(%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Recommended stocks will be added here dynamically -->
+            </tbody>
+        </table>
+
+
+        <h2>Exit Notification</h2>
+        <div class="notification" id="exit-list">
+            <p>If you have any of the recommended stocks listed above, you will be notified here if you need to exit any of them before the holding period ends.</p>
+            <p><strong>Notification:</strong> No exit required at the moment.</p>
+        </div>
+    </div>
+    <div class = "container">
+    <img src = "/static/images/performance_comparision.png">
+    </div>
+
+</body>
+</html>
+
